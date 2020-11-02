@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wheather App</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/1445392131.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body><div class="wheaterProject">
+    
+    <div class="container">
+      
+      
+        <div class="row">
+          <div class="col">
+      <form id="search-form"> 
+      <input 
+      type="text" 
+      class="form-control form-control-sm city-input" 
+      id="colFormLabelSm" 
+      placeholder="Your city..." 
+      autocomplete="off" 
+      autofocus="on">
+      
+      </form>
+    </div>
+    <div class="col">
+      <div class="currentButton">
+        <button>
+          Current
+        </button>
+      </div>
+    </div>
+      <div class="col">
+<div class="sun">
+  <h1><i class="fas fa-sun fa-4x"></i></h1>
+</div>
+      </div>
+    </div>
+    </div>
+      <div class="row">
+        <div class="col">
+        <div class="celcius">       
+          <button>°C</button>       
+      </div></div>
+      <div class="col">
+      <div class="forwardSlash">        
+          <p>/</p>
+        </div></div>
+        <div class="col">
+        <div class="fahrenheit" >     
+          <button>°F</button>
+          </div></div>
+      </div>
+      
+    
+    <div class="currentCityTemperature">
+    <div id="currentCity">
+    Paris 
+  </div> 
+    : 
+    <div id="temperature">
+      15
+    </div> 
+    <div class="unit"></div>
+      
+    
+  </div>
+     
+    
+      <h5 class="main-date" id="current-date">September 27</h5>
+      <h5 class="main-time" id="current-time">15:38</h5>
+    
+    <h5 class="description">
+      Sunny
+    </h5>
+        <div class="weekForecast">
+          <div class="row">
+    <div class="col monday">
+        <i class="fas fa-sun fa-2x"></i>
+        <br />
+        15°C
+        <br />
+        Mon
+    </div>
+    <div class="col tuesday">
+      <i class="fas fa-cloud-rain fa-2x"></i>
+        <br />
+        15°C
+        <br />
+        Tue
+    </div>
+    <div class="col wednesday">
+        <i class="fas fa-cloud-rain fa-2x"></i>
+        <br />
+        13°C
+        <br />
+        Wed
+    </div>
+    <div class="col thursday">
+        <i class="fas fa-cloud-sun fa-2x"></i>
+        <br />
+        18°C
+        <br />
+        Thu
+    </div>
+    <div class="col friday">
+        <i class="fas fa-sun fa-2x"></i>
+        <br />
+        20°C
+        <br />
+        Fri
+    </div>
+  </div>
+    </div>
+    
+    </div>
+  </div>
+  </body>
+  <script src=src/script.js>
+
+  </script>
+</html>

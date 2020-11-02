@@ -1,0 +1,114 @@
+.wheaterProject {
+  max-width: 630px;
+  height: 450px;
+  background: #1b262c;
+  border-radius: 10px;
+  margin: 0 auto;
+  top: 80px;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  color: #bbe1fa;
+  box-shadow: 10px 10px 25px 0px rgba(168, 163, 168, 1);
+}
+
+form {
+  position: absolute;
+  top: 10px;
+}
+
+button {
+  background: none;
+  border: none;
+  color: #bbe1fa;
+}
+
+.currentButton {
+  position: relative;
+  top: 10px;
+  left: -20px;
+  line-height: 1.5;
+  border: solid 2px #bbe1fa;
+  border-radius: 4px;
+  width: 43%;
+}
+.currentButton:hover {
+  background-color: #bbe1fa;
+  color: #1b262c;
+}
+
+h5 {
+  display: block;
+  margin: 0 0 0 15px;
+}
+
+.currentCityTemperature {
+  position: relative;
+  display: inline-flex;
+  left: 10px;
+  font-size: 45px;
+  line-height: 60px;
+}
+
+#temperature {
+  position: relative;
+  left: 10px;
+}
+
+.sun {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.celcius {
+  position: relative;
+  left: 10px;
+  top: 20px;
+  background: none;
+  border: none;
+  color: #bbe1fa;
+}
+
+.forwardSlash {
+  position: relative;
+  top: 21px;
+  left: -180px;
+}
+
+.fahrenheit {
+  position: relative;
+  top: 20px;
+  right: 394px;
+}
+
+.fa-sun,
+.fa-cloud-rain,
+.fa-cloud-sun {
+  color: #3282b8;
+}
+
+.monday,
+.tuesday,
+.wednesday,
+.thursday,
+.friday {
+  border: 2px solid #bbe1fa;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 25px;
+  margin: 10px;
+  position: absolute;
+  padding: 15px 0 0 0;
+}
+
+.weekForecast {
+  margin: 20px 20px 0px 20px;
+  position: relative;
+  bottom: 15px;
+}
+
+.unit {
+  position: relative;
+  left: 10px;
+}
