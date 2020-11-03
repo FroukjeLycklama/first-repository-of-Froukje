@@ -41,6 +41,9 @@ h5 {
   margin: 0 0 0 15px;
 }
 
+h5.description:first-letter {
+  text-transform: capitalize;
+}
 .currentCityTemperature {
   position: relative;
   display: inline-flex;
@@ -54,10 +57,11 @@ h5 {
   left: 10px;
 }
 
-.sun {
+.icon {
   position: absolute;
   top: 20px;
   right: 20px;
+  color: #3282b8;
 }
 
 .celcius {
