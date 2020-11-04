@@ -15,116 +15,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
-  <body><div class="wheaterProject">
-    
-    <div class="container">
-      
+  <body>
+    <div class="wheaterProject">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <form id="search-form"> 
+              <input 
+                type="text" 
+                class="form-control form-control-sm city-input" 
+                id="colFormLabelSm" 
+                placeholder="Your city..." 
+                autocomplete="off" 
+                autofocus="on"
+              />
+            </form>
+          </div>
+          <div class="col">
+            <div class="currentButton">
+              <button>
+                Current
+              </button>
+            </div>
+           </div>
+          <div class="col">
+            <div class="icon">
+              <h1><i class="fas fa-sun fa-4x" id="icon"></i></h1>
+            </div>
+          </div>
+        </div>
       
         <div class="row">
           <div class="col">
-      <form id="search-form"> 
-      <input 
-      type="text" 
-      class="form-control form-control-sm city-input" 
-      id="colFormLabelSm" 
-      placeholder="Your city..." 
-      autocomplete="off" 
-      autofocus="on">
-      
-      </form>
-    </div>
-    <div class="col">
-      <div class="currentButton">
-        <button>
-          Current
-        </button>
-      </div>
-    </div>
-      <div class="col">
-<div class="icon">
-  <h1><i class="fas fa-sun fa-4x" id="icon"></i></h1>
-</div>
-      </div>
-    </div>
-    </div>
-      <div class="row">
+            <div id="celcius">       
+              <button>
+                °C
+              </button>       
+            </div>
+          </div>
+          <div class="col">
+            <div class="forwardSlash">        
+              <p>
+                /
+              </p>
+            </div>
+          </div>
         <div class="col">
-        <div id="celcius">       
-          <button>°C</button>       
-      </div></div>
-      <div class="col">
-      <div class="forwardSlash">        
-          <p>/</p>
-        </div></div>
-        <div class="col">
-        <div id="fahrenheit" >     
-          <button>°F</button>
-          </div></div>
+          <div id="fahrenheit" >     
+            <button>
+              °F
+            </button>
+          </div>
+        </div>
       </div>
-      
-    
     <div class="currentCityTemperature">
-    <div id="currentCity">
-   Paris
-  </div> 
-    : 
-    <div id="temperature">14°C
+      <div id="currentCity">  
     </div> 
-    <div class="unit"></div>
+    : 
+      <div id="temperature">
+    </div> 
+      <div class="unit">
+
+      </div>  
+   </div>
+      <h5 id="description">      
+      </h5>
+    <div id="current-date"></div>
+    <div id="current-time"></div> 
+
+    <div class="row" id="forecast">
       
+      
+    </div>
+
     
-  </div>
-      <h5 id="description">
-      Sunny
-    </h5>
-    
-    <div id="current-date">September 27</div>
-    <div id="current-time">15:38</div>
-  
-   
-        <div class="weekForecast">
-          <div class="row">
-    <div class="col monday">
-        <i class="fas fa-sun fa-2x"></i>
-        <br />
-        15°C
-        <br />
-        Mon
+      
+      </div>
+      <a href="https://github.com/FroukjeLycklama/first-repository-of-Froukje" target="_blank">Open-source code by Froukje Lycklama</a>    
     </div>
-    <div class="col tuesday">
-      <i class="fas fa-cloud-rain fa-2x"></i>
-        <br />
-        15°C
-        <br />
-        Tue
+      
     </div>
-    <div class="col wednesday">
-        <i class="fas fa-cloud-rain fa-2x"></i>
-        <br />
-        13°C
-        <br />
-        Wed
-    </div>
-    <div class="col thursday">
-        <i class="fas fa-cloud-sun fa-2x"></i>
-        <br />
-        18°C
-        <br />
-        Thu
-    </div>
-    <div class="col friday">
-        <i class="fas fa-sun fa-2x"></i>
-        <br />
-        20°C
-        <br />
-        Fri
-    </div>
-  </div>
-    </div>
-    <a href="https://github.com/FroukjeLycklama/first-repository-of-Froukje" target="_blank">Open-source code by Froukje Lycklama</a>
-    </div>
-    
-  </div>
+     
   
   </body>
   <script src=src/script.js>

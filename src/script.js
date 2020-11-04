@@ -60,28 +60,7 @@ function enterCity(event) {
 }
 
 //adding icons
-let iconDescription = [
-  {
-    "01d": "fas fa-sun fa-4x", // day clear sky
-    "01n": "fas fa-moon fa-4x", // night clear sky
-    "02d": "fas fa-cloud-sun fa-4x", // day few clouds
-    "02n": "fas fa-cloud-moon fa-4x", // night few clouds
-    "03d": "fas fa-cloud fa-4x", // day	scattered clouds
-    "03n": "fas fa-cloud fa-4x", // night scattered clouds
-    "04d": "fas fa-cloud fa-4x", // day broken clouds
-    "04n": "fas fa-cloud fa-4x", // night broken clouds
-    "09d": "fas fa-cloud-sun-rain fa-4x", // day shower rain
-    "09n": "fas fa-cloud-moon-rain fa-4x", // night shower rain
-    "10d": "fas fa-cloud-rain fa-4x", // day rain
-    "10n": "fas fa-cloud-rain fa-4x", // night rain
-    "11d": "fas fa-bolt fa-4x", // day thunderstorm
-    "11n": "fas fa-bolt fa-4x", // night thunderstorm
-    "13d": "far fa-snowflake fa-4x", // day snow
-    "13n": "far fa-snowflake fa-4x", // night snow
-    "50d": "fas fa-smog fa-4x", // day mist
-    "50n": "fas fa-smog fa-4x", // night mist
-  },
-];
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", enterCity);
 
@@ -91,6 +70,29 @@ function weather(response) {
   let description = document.querySelector("#description");
   let iconElement = document.querySelector("#icon");
 
+  let iconDescription4x = [
+    {
+      "01d": "fas fa-sun fa-4x", // day clear sky
+      "01n": "fas fa-moon fa-4x", // night clear sky
+      "02d": "fas fa-cloud-sun fa-4x", // day few clouds
+      "02n": "fas fa-cloud-moon fa-4x", // night few clouds
+      "03d": "fas fa-cloud fa-4x", // day	scattered clouds
+      "03n": "fas fa-cloud fa-4x", // night scattered clouds
+      "04d": "fas fa-cloud fa-4x", // day broken clouds
+      "04n": "fas fa-cloud fa-4x", // night broken clouds
+      "09d": "fas fa-cloud-sun-rain fa-4x", // day shower rain
+      "09n": "fas fa-cloud-moon-rain fa-4x", // night shower rain
+      "10d": "fas fa-cloud-rain fa-4x", // day rain
+      "10n": "fas fa-cloud-rain fa-4x", // night rain
+      "11d": "fas fa-bolt fa-4x", // day thunderstorm
+      "11n": "fas fa-bolt fa-4x", // night thunderstorm
+      "13d": "far fa-snowflake fa-4x", // day snow
+      "13n": "far fa-snowflake fa-4x", // night snow
+      "50d": "fas fa-smog fa-4x", // day mist
+      "50n": "fas fa-smog fa-4x", // night mist
+    },
+  ];
+
   celciusTemperature = response.data.main.temp;
 
   temperatureShow.innerHTML = `${Math.round(celciusTemperature)} °C`;
@@ -98,8 +100,64 @@ function weather(response) {
   description.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "class",
-    iconDescription[0][response.data.weather[0].icon]
+    iconDescription4x[0][response.data.weather[0].icon]
   );
+}
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = null;
+  forecastElement.innerHTML = null;
+
+  let iconDescription2x = [
+    {
+      "01d": "fas fa-sun fa-2x", // day clear sky
+      "01n": "fas fa-moon fa-2x", // night clear sky
+      "02d": "fas fa-cloud-sun fa-2x", // day few clouds
+      "02n": "fas fa-cloud-moon fa-2x", // night few clouds
+      "03d": "fas fa-cloud fa-2x", // day	scattered clouds
+      "03n": "fas fa-cloud fa-2x", // night scattered clouds
+      "04d": "fas fa-cloud fa-2x", // day broken clouds
+      "04n": "fas fa-cloud fa-2x", // night broken clouds
+      "09d": "fas fa-cloud-sun-rain fa-2x", // day shower rain
+      "09n": "fas fa-cloud-moon-rain fa-2x", // night shower rain
+      "10d": "fas fa-cloud-rain fa-2x", // day rain
+      "10n": "fas fa-cloud-rain fa-2x", // night rain
+      "11d": "fas fa-bolt fa-2x", // day thunderstorm
+      "11n": "fas fa-bolt fa-2x", // night thunderstorm
+      "13d": "far fa-snowflake fa-2x", // day snow
+      "13n": "far fa-snowflake fa-2x", // night snow
+      "50d": "fas fa-smog fa-2x", // day mist
+      "50n": "fas fa-smog fa-2x", // night mist
+    },
+  ];
+
+  for (let index = 0; index < 5; index++) {
+    let forecast = response.data.list[index];
+
+    forecastElement.innerHTML += `<div class="col-2">
+        <h5>${formatHours(forecast.dt * 1000)}</h5>
+  
+        <i class="${iconDescription2x[0][forecast.weather[0].icon]}"></i>
+        
+        <h5>${Math.round(forecast.main.temp)}°</h5>
+    </div>`;
+  }
 }
 
 function searchCity(city) {
@@ -107,6 +165,9 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(weather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showPosition(position) {
@@ -149,3 +210,5 @@ FahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let CelciusLink = document.querySelector("#celcius");
 CelciusLink.addEventListener("click", displayCelciusTemperature);
+
+searchCity("paris");
