@@ -1,6 +1,6 @@
 .wheaterProject {
   max-width: 630px;
-  height: 450px;
+  height: 430px;
   background: #1b262c;
   border-radius: 10px;
   margin: 0 auto;
@@ -36,14 +36,25 @@ button {
   color: #1b262c;
 }
 
-h5 {
+#description {
   display: block;
-  margin: 0 0 0 15px;
+  margin: 0 0 5px 15px;
+  color: #3282b8;
 }
 
-h5.description:first-letter {
+#description:first-letter {
   text-transform: capitalize;
 }
+
+#current-time,
+#current-date {
+  display: inline;
+  position: relative;
+  left: 15px;
+
+  font-size: 20px;
+}
+
 .currentCityTemperature {
   position: relative;
   display: inline-flex;
@@ -64,7 +75,7 @@ h5.description:first-letter {
   color: #3282b8;
 }
 
-.celcius {
+#celcius {
   position: relative;
   left: 10px;
   top: 20px;
@@ -79,7 +90,7 @@ h5.description:first-letter {
   left: -180px;
 }
 
-.fahrenheit {
+#fahrenheit {
   position: relative;
   top: 20px;
   right: 394px;

@@ -86,20 +86,20 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", enterCity);
 
 function weather(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
+  let temperature = Math.round(celciusTemperature);
   let temperatureShow = document.querySelector("#temperature");
   let cityElement = document.querySelector("#currentCity");
   let description = document.querySelector("#description");
   let iconElement = document.querySelector("#icon");
 
-  temperatureShow.innerHTML = `${temperature}`;
+  temperatureShow.innerHTML = `${temperature} °C`;
   cityElement.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "class",
     iconDescription[0][response.data.weather[0].icon]
   );
-  console.log(response.data.weather[0].icon);
 }
 
 function searchCity(city) {
@@ -126,3 +126,27 @@ function getCurrentPosition() {
 }
 let button = document.querySelector(".currentButton");
 button.addEventListener("click", getCurrentPosition);
+
+//converting celcius and fahrenheit
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = `${Math.round(
+    (celciusTemperature * 9) / 5 + 32
+  )} °F `;
+  let temperatureShow = document.querySelector("#temperature");
+  temperatureShow.innerHTML = fahrenheitTemperature;
+}
+
+function displayCelciusTemperature(event) {
+  event.prefentDefault();
+  let temperatureShow = document.querySelector("#temperature");
+  temperatureShow.innerHTML = Math.round(temperature);
+}
+
+let celciusTemperature = null;
+
+let FahrenheitLink = document.querySelector("#fahrenheit");
+FahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let CelciusLink = document.querySelector("#celcius");
+CelciusLink.addEventListener("click", displayCelciusTemperature);
