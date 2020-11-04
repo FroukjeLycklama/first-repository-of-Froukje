@@ -54,6 +54,9 @@ button {
 
   font-size: 20px;
 }
+#current-time {
+  color: #3282b8;
+}
 
 .currentCityTemperature {
   position: relative;

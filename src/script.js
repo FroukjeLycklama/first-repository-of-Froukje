@@ -86,14 +86,14 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", enterCity);
 
 function weather(response) {
-  celciusTemperature = response.data.main.temp;
-  let temperature = Math.round(celciusTemperature);
   let temperatureShow = document.querySelector("#temperature");
   let cityElement = document.querySelector("#currentCity");
   let description = document.querySelector("#description");
   let iconElement = document.querySelector("#icon");
 
-  temperatureShow.innerHTML = `${temperature} °C`;
+  celciusTemperature = response.data.main.temp;
+
+  temperatureShow.innerHTML = `${Math.round(celciusTemperature)} °C`;
   cityElement.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
@@ -138,9 +138,8 @@ function displayFahrenheitTemperature(event) {
 }
 
 function displayCelciusTemperature(event) {
-  event.prefentDefault();
   let temperatureShow = document.querySelector("#temperature");
-  temperatureShow.innerHTML = Math.round(temperature);
+  temperatureShow.innerHTML = `${Math.round(celciusTemperature)} °C`;
 }
 
 let celciusTemperature = null;
