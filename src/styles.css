@@ -17,9 +17,9 @@ form {
 }
 
 button {
+  color: #bbe1fa;
   background: none;
   border: none;
-  color: #bbe1fa;
 }
 
 .currentButton {
@@ -30,10 +30,11 @@ button {
   border: solid 2px #bbe1fa;
   border-radius: 4px;
   width: 43%;
+  transition: 200ms all ease-in-out;
 }
+
 .currentButton:hover {
   background-color: #bbe1fa;
-  color: #1b262c;
 }
 
 #description {
@@ -70,12 +71,21 @@ button {
   left: 10px;
 }
 
-.icon {
+#icon {
   position: absolute;
   top: 20px;
   right: 20px;
   color: #3282b8;
+  animation: example linear 2s infinite alternate;
+}
 
+@keyframes example {
+  from {
+    color: #3282b8;
+  }
+  to {
+    color: #bbe1fa;
+  }
 }
 
 #celcius {
@@ -108,6 +118,11 @@ button {
   margin: 10px;
   position: absolute;
   padding: 15px 0 15px 0;
+  transition: 200ms all ease-in-out;
+}
+
+.col-2:hover {
+  transform: scale(1.05);
 }
 
 #forecast {
@@ -126,4 +141,12 @@ button {
 a {
   position: relative;
   top: 35px;
+}
+
+.forecast-icons:hover {
+  color: #3282b8;
+  transform: scale(1.05);
+}
+.forecast-icons {
+  transition: 200ms all ease-in;
 }

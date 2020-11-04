@@ -152,9 +152,9 @@ function displayForecast(response) {
 
     forecastElement.innerHTML += `<div class="col-2">
         <h5>${formatHours(forecast.dt * 1000)}</h5>
-  
+  <div class="forecast-icons">
         <i class="${iconDescription2x[0][forecast.weather[0].icon]}"></i>
-        
+        </div>
         <h5>${Math.round(forecast.main.temp)}°</h5>
     </div>`;
   }
