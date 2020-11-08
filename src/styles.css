@@ -9,6 +9,7 @@
   height: auto;
   margin: 30px auto;
   border-radius: 10px;
+  min-width: 576px;
 }
 button {
   background: none;
