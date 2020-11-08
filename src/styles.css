@@ -33,7 +33,7 @@ form {
   border: solid 2px #bbe1fa;
   border-radius: 4px;
   transition: 200ms all ease-in-out;
-  width: 140%;
+  width: 150%;
 }
 
 .currentButton:hover {
@@ -76,7 +76,7 @@ ul {
 .currentCityTemperature {
   position: relative;
   display: inline-flex;
-  font-size: 4vw;
+  font-size: 40px;
   line-height: 60px;
 }
 

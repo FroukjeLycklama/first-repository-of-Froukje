@@ -94,7 +94,7 @@ function weather(response) {
   celciusTemperature = response.data.main.temp;
 
   temperatureShow.innerHTML = `${Math.round(celciusTemperature)} °C`;
-  cityElement.innerHTML = response.data.name;
+  cityElement.innerHTML = `${response.data.name}:`;
   description.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "class",
@@ -172,7 +172,7 @@ function showPosition(position) {
   let cityElement = document.querySelector("#currentCity");
   let cityInput = document.querySelector(".city-input");
 
-  cityElement.innerHTML = `${cityInput.value}`;
+  cityElement.innerHTML = `${cityInput.value}:`;
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "b023fd56f40d9be792595f31c41a1fe8";
