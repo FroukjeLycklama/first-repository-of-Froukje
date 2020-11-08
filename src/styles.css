@@ -2,13 +2,6 @@
   box-sizing: border-box;
 }
 
-@media only screen and (max-width: 600px) {
-  /* For mobile phones: */
-  [class*="col"] {
-    width: 100%;
-  }
-}
-
 .wheaterProject {
   background: #1b262c;
   font-family: "Montserrat", sans-serif;
@@ -33,7 +26,6 @@ form {
   border: solid 2px #bbe1fa;
   border-radius: 4px;
   transition: 200ms all ease-in-out;
-  width: 150%;
 }
 
 .currentButton:hover {
@@ -88,7 +80,8 @@ ul {
 #icon {
   color: #3282b8;
   animation: example linear 2s infinite alternate;
-  margin-right: 20px;
+  position: relative;
+  left: 50px;
 }
 
 @keyframes example {
