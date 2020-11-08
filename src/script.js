@@ -59,8 +59,6 @@ function enterCity(event) {
   searchCity(cityInput.value);
 }
 
-//adding icons
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", enterCity);
 
@@ -147,10 +145,10 @@ function displayForecast(response) {
     },
   ];
 
-  for (let index = 0; index < 5; index++) {
+  for (let index = 0; index < 6; index++) {
     let forecast = response.data.list[index];
 
-    forecastElement.innerHTML += `<div class="col-2">
+    forecastElement.innerHTML += `<div class="col forecast">
         <h5>${formatHours(forecast.dt * 1000)}</h5>
   <div class="forecast-icons">
         <i class="${iconDescription2x[0][forecast.weather[0].icon]}"></i>
@@ -180,6 +178,9 @@ function showPosition(position) {
   let apiKey = "b023fd56f40d9be792595f31c41a1fe8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(weather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getCurrentPosition() {

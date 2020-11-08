@@ -1,42 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  [class*="col"] {
+    width: 100%;
+  }
+}
+
 .wheaterProject {
-  max-width: 650px;
-  height: 430px;
   background: #1b262c;
-  border-radius: 10px;
-  margin: 0 auto;
-  top: 80px;
-  position: relative;
   font-family: "Montserrat", sans-serif;
   color: #bbe1fa;
-  box-shadow: 10px 10px 25px 0px rgba(168, 163, 168, 1);
+  height: auto;
+  margin: 30px auto;
+  border-radius: 10px;
 }
-
-form {
-  position: absolute;
-  top: 10px;
-}
-
 button {
-  color: #bbe1fa;
   background: none;
+  color: #bbe1fa;
   border: none;
 }
 
+form {
+  padding: 15px;
+}
 .currentButton {
-  position: relative;
-  top: 10px;
-  left: -20px;
+  text-align: center;
+  margin: 15px;
   line-height: 1.5;
   border: solid 2px #bbe1fa;
   border-radius: 4px;
-  width: 43%;
   transition: 200ms all ease-in-out;
+  width: 140%;
 }
 
 .currentButton:hover {
   background-color: #bbe1fa;
 }
 
+ul {
+  list-style: none;
+  padding-inline-start: 0px;
+  padding: 15px;
+}
+
+#celcius,
+.forwardSlash,
+#fahrenheit {
+  display: inline;
+  position: relative;
+}
 #description {
   display: block;
   margin: 0 0 5px 0px;
@@ -61,8 +76,7 @@ button {
 .currentCityTemperature {
   position: relative;
   display: inline-flex;
-
-  font-size: 45px;
+  font-size: 4vw;
   line-height: 60px;
 }
 
@@ -72,11 +86,9 @@ button {
 }
 
 #icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   color: #3282b8;
   animation: example linear 2s infinite alternate;
+  margin-right: 20px;
 }
 
 @keyframes example {
@@ -87,60 +99,24 @@ button {
     color: #bbe1fa;
   }
 }
-
-#celcius {
-  position: relative;
-  left: -3px;
-  top: 20px;
-  background: none;
-  border: none;
-  color: #bbe1fa;
+#forecast {
+  margin: 0 auto;
+  max-width: 100%;
 }
 
-.forwardSlash {
-  position: relative;
-  top: 21px;
-  left: -185px;
-}
-
-#fahrenheit {
-  position: relative;
-  top: 20px;
-  right: 394px;
-}
-
-.col-2 {
+.forecast {
   border: 2px solid #bbe1fa;
   border-radius: 10px;
   text-align: center;
   line-height: 90px;
   font-size: 25px;
-  margin: 10px;
-  position: absolute;
+  margin: 15px;
   padding: 15px 0 15px 0;
   transition: 200ms all ease-in-out;
 }
 
-.col-2:hover {
+.forecast:hover {
   transform: scale(1.05);
-}
-
-#forecast {
-  position: relative;
-  bottom: 15px;
-  top: 20px;
-  width: 640px;
-  left: 5px;
-}
-
-.unit {
-  position: relative;
-  left: 10px;
-}
-
-a {
-  position: relative;
-  top: 35px;
 }
 
 .forecast-icons:hover {
